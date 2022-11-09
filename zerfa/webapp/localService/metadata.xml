@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://www.laloperu.com:8010/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEFRA_C_SOHEADER_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_AddressType" sap:label="Address" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AddressID"/>
+                </Key>
+                <Property Name="AddressID" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Address Number"/>
+                <Property Name="CareOfName" Type="Edm.String" MaxLength="40" sap:label="c/o" sap:quickinfo="c/o name"/>
+                <Property Name="AdditionalStreetSuffixName" Type="Edm.String" MaxLength="40" sap:label="Street 5"/>
+                <Property Name="CorrespondenceLanguage" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="PrfrdCommMediumType" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Comm. Method" sap:quickinfo="Communication Method (Key) (Business Address Services)"/>
+                <Property Name="POBox" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="PO Box"/>
+                <Property Name="POBoxIsWithoutNumber" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="PO Box w/o No." sap:quickinfo="Flag: PO Box Without Number"/>
+                <Property Name="POBoxPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="PO Box Postal Code"/>
+                <Property Name="POBoxLobbyName" Type="Edm.String" MaxLength="40" sap:label="PO Box Lobby"/>
+                <Property Name="POBoxDeviatingCityName" Type="Edm.String" MaxLength="40" sap:label="PO Box City" sap:quickinfo="PO Box city"/>
+                <Property Name="POBoxDeviatingRegion" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PO Box Region" sap:quickinfo="Region for PO Box (Country, State, Province, ...)"/>
+                <Property Name="POBoxDeviatingCountry" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PO box country"/>
+                <Property Name="DeliveryServiceTypeCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Delvry Serv Type" sap:quickinfo="Type of Delivery Service"/>
+                <Property Name="DeliveryServiceNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Delivery Service No." sap:quickinfo="Number of Delivery Service"/>
+                <Property Name="AddressTimeZone" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Time zone" sap:quickinfo="Address time zone"/>
+                <Property Name="CityFileTestStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Test stat./City file" sap:quickinfo="City file test status"/>
+                <Property Name="AddressStreetUnusable" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Undeliverable" sap:quickinfo="Street Address Undeliverable Flag"/>
+                <Property Name="AddressPostBoxUnusable" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Undeliverable" sap:quickinfo="PO Box Address Undeliverable Flag"/>
+                <Property Name="FullName" Type="Edm.String" MaxLength="80" sap:label="Full Name" sap:quickinfo="Full name of a party (Bus. Partner, Org. Unit, Doc. address)"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="District" Type="Edm.String" MaxLength="40" sap:label="District"/>
+                <Property Name="CityCode" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="City Code" sap:quickinfo="City code for city/street file"/>
+                <Property Name="HomeCityName" Type="Edm.String" MaxLength="40" sap:label="Different City" sap:quickinfo="City (different from postal city)"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City postal code"/>
+                <Property Name="CompanyPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Company Postal Code" sap:quickinfo="Company Postal Code (for Large Customers)"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="StreetPrefixName" Type="Edm.String" MaxLength="40" sap:label="Street 2"/>
+                <Property Name="AdditionalStreetPrefixName" Type="Edm.String" MaxLength="40" sap:label="Street 3"/>
+                <Property Name="StreetSuffixName" Type="Edm.String" MaxLength="40" sap:label="Street 4"/>
+                <Property Name="HouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="HouseNumberSupplementText" Type="Edm.String" MaxLength="10" sap:label="Supplement" sap:quickinfo="House number supplement"/>
+                <Property Name="Building" Type="Edm.String" MaxLength="20" sap:label="Building Code" sap:quickinfo="Building (Number or Code)"/>
+                <Property Name="Floor" Type="Edm.String" MaxLength="10" sap:label="Floor" sap:quickinfo="Floor in building"/>
+                <Property Name="RoomNumber" Type="Edm.String" MaxLength="10" sap:label="Room Number" sap:quickinfo="Room or Apartment Number"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
+                <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (State, Province, County)"/>
+                <Property Name="County" Type="Edm.String" MaxLength="40" sap:label="County"/>
+                <Property Name="CountyCode" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="County code" sap:quickinfo="County code for county"/>
+                <Property Name="TownshipCode" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Township code" sap:quickinfo="Township code for Township"/>
+                <Property Name="TownshipName" Type="Edm.String" MaxLength="40" sap:label="Township"/>
+                <Property Name="FormOfAddress" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Title" sap:quickinfo="Form-of-Address Key"/>
+                <Property Name="BusinessPartnerName1" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="BusinessPartnerName2" Type="Edm.String" MaxLength="40" sap:label="Name 2"/>
+                <Property Name="Nation" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Address Version" sap:quickinfo="Version ID for International Addresses"/>
+                <Property Name="PhoneNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Telephone" sap:quickinfo="First telephone no.: dialling code+number"/>
+                <Property Name="FaxNumber" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Fax" sap:quickinfo="First Fax No.: Area Code + Number"/>
+                <Property Name="SearchTerm1" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 1"/>
+                <Property Name="SearchTerm2" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
+                <Property Name="StreetSearch" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Street" sap:quickinfo="Street Name in Uppercase for Search Help"/>
+                <Property Name="CitySearch" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="City" sap:quickinfo="City name in Uppercase for Search Help"/>
+                <Property Name="BusinessPartnerName3" Type="Edm.String" MaxLength="40" sap:label="Name 3"/>
+                <Property Name="BusinessPartnerName4" Type="Edm.String" MaxLength="40" sap:label="Name 4"/>
+                <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Tax Jurisdiction"/>
+                <Property Name="TransportZone" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Transportation Zone" sap:quickinfo="Transportation zone to or from which the goods are delivered"/>
+                <Property Name="AddressCityPostBoxCode" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="City Code" sap:quickinfo="City PO box code (City file)"/>
+                <Property Name="Person" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Person number"/>
+            </EntityType>
+            <EntityType Name="I_CompanyCodeStdVHType" sap:label="Company Code" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="CompanyCodeName" sap:label="Company Code"/>
+                <Property Name="CompanyCodeName" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/>
+            </EntityType>
+            <EntityType Name="I_CustomerType" sap:label="Customer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Name of Customer"/>
+                <Property Name="CustomerFullName" Type="Edm.String" MaxLength="220" sap:display-format="UpperCase" sap:label="Customer Name" sap:quickinfo="Customer Full Name"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of Person who Created the Object"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the Record Was Created"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address"/>
+                <Property Name="CustomerClassification" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="to_CustomerClassification/CustomerClassification_Text" sap:label="Customer Classific." sap:quickinfo="Customer Classification" sap:value-list="standard"/>
+                <Property Name="VATRegistration" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="VAT Registration No." sap:quickinfo="VAT Registration Number"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account group" sap:quickinfo="Customer Account Group"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization" sap:quickinfo="Authorization Group"/>
+                <Property Name="DeliveryIsBlocked" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Delivery block" sap:quickinfo="Central delivery block for the customer"/>
+                <Property Name="PostingIsBlocked" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Posting Block" sap:quickinfo="Central posting block"/>
+                <Property Name="BillingIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing block" sap:quickinfo="Central billing block for customer"/>
+                <Property Name="OrderIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Order block" sap:quickinfo="Central order block for customer"/>
+                <Property Name="InternationalLocationNumber1" Type="Edm.String" MaxLength="7" sap:display-format="NonNegative" sap:label="Int. location no. 1" sap:quickinfo="International location number  (part 1)"/>
+                <Property Name="IsOneTimeAccount" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="One-time account" sap:quickinfo="Indicator: Is the account a one-time account?"/>
+                <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Tax Jurisdiction"/>
+                <Property Name="Industry" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Industry" sap:quickinfo="Industry key"/>
+                <Property Name="TaxNumberType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax number type" sap:quickinfo="Tax Number Type"/>
+                <Property Name="TaxNumber1" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Tax Number 1"/>
+                <Property Name="TaxNumber2" Type="Edm.String" MaxLength="11" sap:display-format="UpperCase" sap:label="Tax Number 2"/>
+                <Property Name="TaxNumber3" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Tax Number 3"/>
+                <Property Name="TaxNumber4" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Tax Number 4"/>
+                <Property Name="TaxNumber5" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Tax Number 5"/>
+                <Property Name="CustomerCorporateGroup" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Group key"/>
+                <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor" sap:quickinfo="Account Number of Vendor or Creditor"/>
+                <Property Name="NielsenRegion" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Nielsen indicator" sap:quickinfo="Nielsen ID"/>
+                <Property Name="IndustryCode1" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 1"/>
+                <Property Name="IndustryCode2" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 2"/>
+                <Property Name="IndustryCode3" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 3"/>
+                <Property Name="IndustryCode4" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 4"/>
+                <Property Name="IndustryCode5" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Industry code 5"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country" sap:quickinfo="Country Key"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="SortField" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Search term" sap:quickinfo="Sort field"/>
+                <Property Name="FaxNumber" Type="Edm.String" MaxLength="31" sap:label="Fax Number"/>
+                <Property Name="BR_SUFRAMACode" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Suframa Code"/>
+                <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (State, Province, County)"/>
+                <Property Name="TelephoneNumber1" Type="Edm.String" MaxLength="16" sap:label="Telephone 1" sap:quickinfo="First telephone number"/>
+                <Property Name="TelephoneNumber2" Type="Edm.String" MaxLength="16" sap:label="Telephone 2" sap:quickinfo="Second telephone number"/>
+                <Property Name="AlternativePayerAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Alternative payer" sap:quickinfo="Account number of an alternative payer"/>
+                <Property Name="DataMediumExchangeIndicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="DME indicator" sap:quickinfo="Report key for data medium exchange"/>
+                <Property Name="VATLiability" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Liable for VAT"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Completed" sap:quickinfo="Business Purpose Completed Flag"/>
+                <Property Name="ResponsibleType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tax type"/>
+                <Property Name="FiscalAddress" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fiscal address" sap:quickinfo="Account number of the master record with the fiscal address"/>
+                <Property Name="NFPartnerIsNaturalPerson" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Natural Person"/>
+                <Property Name="DeletionIndicator" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Deletion flag" sap:quickinfo="Central Deletion Flag for Master Record"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="TradingPartner" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Trading Partner No." sap:quickinfo="Company ID of Trading Partner"/>
+                <Property Name="DeliveryDateTypeRule" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deliv Date Rule" sap:quickinfo="Delivery Date Rule"/>
+                <Property Name="TaxInvoiceRepresentativeName" Type="Edm.String" MaxLength="10" sap:label="Rep's Name" sap:quickinfo="Name of Representative"/>
+                <Property Name="BusinessType" Type="Edm.String" MaxLength="30" sap:label="Type of Business"/>
+                <Property Name="IndustryType" Type="Edm.String" MaxLength="30" sap:label="Type of Industry"/>
+                <Property Name="TW_CollvBillingIsSupported" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Consolidated Invoic." sap:quickinfo="Consolidated Invoicing for Taiwan"/>
+                <NavigationProperty Name="to_CustomerClassification" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_C9CD836CFC89E1433FB2649E56D3AA66" FromRole="FromRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66" ToRole="ToRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66"/>
+            </EntityType>
+            <EntityType Name="I_CustomerClassificationType" sap:label="Customer Classification" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CustomerClassification"/>
+                </Key>
+                <Property Name="CustomerClassification" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="CustomerClassification_Text" sap:label="Customer Classific." sap:quickinfo="Customer Classification"/>
+                <Property Name="CustomerClassification_Text" Type="Edm.String" MaxLength="20" sap:label="Customer Classification Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="I_Customer_VHType" sap:label="Customer" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country" sap:quickinfo="Country Key"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Customer Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account group" sap:quickinfo="Customer Account Group"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization" sap:quickinfo="Authorization Group"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Complete Flag" sap:quickinfo="Business Purpose Completed Flag"/>
+            </EntityType>
+            <EntityType Name="I_DistributionChannelType" sap:label="Distribution Channel" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DistributionChannel"/>
+                </Key>
+                <Property Name="DistributionChannel" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="DistributionChannel_Text" sap:label="Distribution Channel"/>
+                <Property Name="DistributionChannel_Text" Type="Edm.String" MaxLength="20" sap:label="Distribution Channel Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="I_DivisionType" sap:label="Division" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Division"/>
+                </Key>
+                <Property Name="Division" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="Division_Text" sap:label="Division"/>
+                <Property Name="Division_Text" Type="Edm.String" MaxLength="20" sap:label="Division Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType" sap:label="Draft Administration Data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Draft (Technical ID)"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Draft Entity ID"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Draft Created By"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Draft Last Changed By"/>
+                <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Draft Access Type"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft In Process Since"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Draft In Process By"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Is Kept By User"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Locked Since"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Created By Me"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Last Changed By Me"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft In Process By Me"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Created By (Description)"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Last Changed By (Description)"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft In Process By (Description)"/>
+            </EntityType>
+            <EntityType Name="I_MaterialType" sap:label="Material" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="Material_Text" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Material_Text" Type="Edm.String" MaxLength="40" sap:label="Material description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Material type"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Material Group"/>
+                <Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:text="to_BaseUnit/UnitOfMeasure_Text" sap:label="Base Unit of Measure" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialGrossWeight" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialWeightUnit" sap:label="Gross weight"/>
+                <Property Name="MaterialNetWeight" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialWeightUnit" sap:label="Net weight"/>
+                <Property Name="MaterialWeightUnit" Type="Edm.String" MaxLength="3" sap:text="to_WeightUnit/UnitOfMeasure_Text" sap:label="Weight unit" sap:quickinfo="Weight Unit" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="MaterialManufacturerNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Manufacturer" sap:quickinfo="Manufacturer number"/>
+                <Property Name="MaterialManufacturerPartNumber" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Mfr Part Number" sap:quickinfo="Manufacturer Part Number"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization Group"/>
+                <Property Name="IsBatchManagementRequired" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Batch Management" sap:quickinfo="Batch Management Requirement Indicator"/>
+                <Property Name="CrossPlantConfigurableProduct" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Cross-plant CM" sap:quickinfo="Cross-Plant Configurable Material"/>
+                <Property Name="ProductCategory" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Material Category"/>
+                <Property Name="ProductCharacteristic1" Type="Edm.String" MaxLength="18" sap:label="Color" sap:quickinfo="Characteristic Value for Colors of Variants"/>
+                <Property Name="ProductCharacteristic2" Type="Edm.String" MaxLength="18" sap:label="Main Size" sap:quickinfo="Characteristic Value for Main Sizes of Variants"/>
+                <Property Name="ProductCharacteristic3" Type="Edm.String" MaxLength="18" sap:label="Second Size" sap:quickinfo="Characteristic Value for Second Size for Variants"/>
+                <Property Name="ProdCharc1InternalNumber" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Int. Char. Number" sap:quickinfo="Internal Charactieristic Number for Color Characteristics"/>
+                <Property Name="ProdCharc2InternalNumber" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Int. Char. Number" sap:quickinfo="Internal Char. Number for Characteristics for Main Sizes"/>
+                <Property Name="ProdCharc3InternalNumber" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Int. Char. Number" sap:quickinfo="Internal Char. Number for Characteristics for Second Sizes"/>
+                <NavigationProperty Name="to_BaseUnit" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_EBF97F0698BDC76F1E3AF501F0F18E9A" FromRole="FromRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A" ToRole="ToRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A"/>
+                <NavigationProperty Name="to_WeightUnit" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_B46BCF309A9B43CB25FCEFE1CC5B4227" FromRole="FromRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227" ToRole="ToRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227"/>
+            </EntityType>
+            <EntityType Name="I_SalesGroupType" sap:label="Sales Group" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesGroup"/>
+                </Key>
+                <Property Name="SalesGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:text="SalesGroup_Text" sap:label="Sales group"/>
+                <Property Name="SalesGroup_Text" Type="Edm.String" MaxLength="20" sap:label="Sales Group Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="I_SalesOfficeType" sap:label="Sales Office" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOffice"/>
+                </Key>
+                <Property Name="SalesOffice" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="SalesOffice_Text" sap:label="Sales office"/>
+                <Property Name="SalesOffice_Text" Type="Edm.String" MaxLength="20" sap:label="Sales Office Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="I_SalesOrderTypeType" sap:label="Sales Order Types" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrderType"/>
+                </Key>
+                <Property Name="SalesOrderType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="SalesOrderType_Text" sap:label="Sales Order Type"/>
+                <Property Name="SalesOrderType_Text" Type="Edm.String" MaxLength="20" sap:label="Description" sap:quickinfo="Sales Document Type Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrderProcessingType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Indicator" sap:quickinfo="Sales document indicator (for display in TVAK only)"/>
+                <Property Name="OrderTypeForBillingRequest" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Billing request" sap:quickinfo="Order type for request for billing"/>
+            </EntityType>
+            <EntityType Name="I_SalesOrganizationType" sap:label="Sales Organization" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesOrganization"/>
+                </Key>
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="SalesOrganization_Text" sap:label="Sales Organization"/>
+                <Property Name="SalesOrganization_Text" Type="Edm.String" MaxLength="20" sap:label="Sales Organization Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SalesOrganizationCurrency" Type="Edm.String" MaxLength="5" sap:label="Statistics Currency" sap:quickinfo="Statistics currency" sap:semantics="currency-code"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code" sap:quickinfo="Company code of the sales organization" sap:value-list="standard"/>
+                <Property Name="IntercompanyBillingCustomer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cust.Inter-Co.Bill." sap:quickinfo="Customer number for intercompany billing" sap:value-list="standard"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address"/>
+                <NavigationProperty Name="to_Address" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_DB904894788DBE9AF78F0C4A87E3F20A" FromRole="FromRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A" ToRole="ToRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureType" sap:label="Unit of Measure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasure"/>
+                </Key>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="UnitOfMeasure_Text" sap:label="Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="UnitOfMeasure_Text" Type="Edm.String" MaxLength="30" sap:label="UoM Text" sap:quickinfo="Unit of Measurement Text (Maximum 30 Characters)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="UnitOfMeasureSAPCode" Type="Edm.String" MaxLength="3" sap:label="Internal SAP Code" sap:quickinfo="Unit of Measurement, Internal SAP Code (No Conversion)"/>
+                <Property Name="UnitOfMeasureISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:text="to_ISOCode/UnitOfMeasureISOCode_Text" sap:label="ISO code" sap:quickinfo="ISO code for unit of measurement" sap:value-list="standard"/>
+                <Property Name="IsPrimaryUnitForISOCode" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary code" sap:quickinfo="Selection field for conversion from ISO code to int. code"/>
+                <Property Name="UnitOfMeasureNumberOfDecimals" Type="Edm.Int16" sap:label="Decimal Rounding" sap:quickinfo="No. of decimal places for rounding"/>
+                <Property Name="UnitOfMeasureIsCommercial" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Commercial meas.unit" sap:quickinfo="Commercial measurement unit ID"/>
+                <Property Name="UnitOfMeasureDimension" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:text="to_Dimension/UnitOfMeasureDimension_Text" sap:label="Dimension" sap:quickinfo="Dimension key" sap:value-list="standard"/>
+                <Property Name="SIUnitCnvrsnRateNumerator" Type="Edm.Int32" sap:label="Numerator" sap:quickinfo="Numerator for conversion to SI unit"/>
+                <Property Name="SIUnitCnvrsnRateDenominator" Type="Edm.Int32" sap:label="Denominator" sap:quickinfo="Denominator for conversion into SI unit"/>
+                <Property Name="SIUnitCnvrsnRateExponent" Type="Edm.Int16" sap:label="Exponent" sap:quickinfo="base ten exponent for conversion to SI unit"/>
+                <Property Name="SIUnitCnvrsnAdditiveValue" Type="Edm.Decimal" Precision="9" Scale="6" sap:label="Additive constant" sap:quickinfo="Additive constant for conversion to SI unit"/>
+                <Property Name="UnitOfMeasureDspExponent" Type="Edm.Int16" sap:label="float. point exp." sap:quickinfo="Base ten exponent for floating-point display"/>
+                <Property Name="UnitOfMeasureDspNmbrOfDcmls" Type="Edm.Int16" sap:label="Decimal Places" sap:quickinfo="Number of decimal places for number display"/>
+                <Property Name="UnitOfMeasureTemperature" Type="Edm.Double" sap:unit="UnitOfMeasureTemperatureUnit" sap:label="Temperature"/>
+                <Property Name="UnitOfMeasureTemperatureUnit" Type="Edm.String" MaxLength="3" sap:label="Temperature unit" sap:semantics="unit-of-measure"/>
+                <Property Name="UnitOfMeasurePressure" Type="Edm.Double" sap:unit="UnitOfMeasurePressureUnit" sap:label="Pressure Value"/>
+                <Property Name="UnitOfMeasurePressureUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Pressure" sap:semantics="unit-of-measure"/>
+                <NavigationProperty Name="to_Dimension" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_744267C89213C6F0BEAA53E2EB9C8F4F" FromRole="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F" ToRole="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <NavigationProperty Name="to_ISOCode" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_5E18390584266C106B459BC3FD3D3C50" FromRole="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50" ToRole="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureDimensionType" sap:label="Unit of Measure Dimension" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasureDimension"/>
+                </Key>
+                <Property Name="UnitOfMeasureDimension" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:text="UnitOfMeasureDimension_Text" sap:label="Dimension" sap:quickinfo="Dimension key"/>
+                <Property Name="UnitOfMeasureDimension_Text" Type="Edm.String" MaxLength="20" sap:label="Dimension text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LengthExponent" Type="Edm.Int16" sap:label="Length" sap:quickinfo="Length exponent"/>
+                <Property Name="MassExponent" Type="Edm.Int16" sap:label="Mass" sap:quickinfo="Mass exponent"/>
+                <Property Name="TimeExponent" Type="Edm.Int16" sap:label="Time" sap:quickinfo="Current exponent"/>
+                <Property Name="ElectricCurrentExponent" Type="Edm.Int16" sap:label="elec. current" sap:quickinfo="Electric current exponent"/>
+                <Property Name="TemperatureExponent" Type="Edm.Int16" sap:label="Temperature" sap:quickinfo="Temperature exponent"/>
+                <Property Name="MoleQuantityExponent" Type="Edm.Int16" sap:label="Mole quantity" sap:quickinfo="Mole quantity exponent"/>
+                <Property Name="LuminosityExponent" Type="Edm.Int16" sap:label="Luminous intensity" sap:quickinfo="Luminosity exponent"/>
+                <Property Name="UnitOFMeasureSiUnit" Type="Edm.String" MaxLength="3" sap:label="SI unit" sap:semantics="unit-of-measure"/>
+                <Property Name="HasUnitsWithTemperatureSpec" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Temperature-Depend." sap:quickinfo="Indicator: Dimension has Unit with Temperature Specification"/>
+                <Property Name="HasUnitsWithPressureSpec" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Pressure-Dependent" sap:quickinfo="Indicator: Dimension has Units with Pressure Specification"/>
+            </EntityType>
+            <EntityType Name="I_UnitOfMeasureISOCodeType" sap:label="Unit of Measure ISO Code" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitOfMeasureISOCode"/>
+                </Key>
+                <Property Name="UnitOfMeasureISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:text="UnitOfMeasureISOCode_Text" sap:label="ISO code" sap:quickinfo="ISO code for unit of measurement"/>
+                <Property Name="UnitOfMeasureISOCode_Text" Type="Edm.String" MaxLength="25" sap:label="ISO code" sap:quickinfo="ISO codes for measurement unit names" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZEFRA_C_SOHEADERType" sap:label="Cabecera SO" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="orderNumber"/>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Activation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="orderNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales document" sap:quickinfo="Sales Document" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="orderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_orderType/SalesOrderType_Text" sap:label="Sales Document Type" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="salesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_salesOrg/SalesOrganization_Text" sap:label="Sales Organization" sap:value-list="standard"/>
+                <Property Name="distributionChannel" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="to_distributionChannel/DistributionChannel_Text" sap:label="Distribution Channel" sap:value-list="standard"/>
+                <Property Name="division" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="to_division/Division_Text" sap:label="Division" sap:value-list="standard"/>
+                <Property Name="salesOffice" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_salesOffice/SalesOffice_Text" sap:label="Sales office" sap:value-list="standard"/>
+                <Property Name="salesGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:text="to_salesGroup/SalesGroup_Text" sap:label="Sales group" sap:value-list="standard"/>
+                <Property Name="soldTo" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="to_soldTo/CustomerName" sap:label="Sold-To Party" sap:value-list="standard"/>
+                <Property Name="soldToName" Type="Edm.String" MaxLength="80" sap:label="Name of Customer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="shipTo" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="to_shipTo/CustomerName" sap:label="Customer" sap:quickinfo="Customer Number" sap:value-list="standard"/>
+                <Property Name="shipToName" Type="Edm.String" MaxLength="80" sap:label="Name of Customer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="customerReference" Type="Edm.String" MaxLength="20" sap:label="Customer Reference" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of Person who Created the Object" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the record was created" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createAt" Type="Edm.Time" Precision="0" sap:label="Time" sap:quickinfo="Entry time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="changeOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Date of Last Change" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="netValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="currency" sap:label="Net Value" sap:quickinfo="Net Value of the Sales Order in Document Currency" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="currency" Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:quickinfo="SD document currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_7CFA283366069453F4999D23E44C8963" FromRole="FromRole_assoc_7CFA283366069453F4999D23E44C8963" ToRole="ToRole_assoc_7CFA283366069453F4999D23E44C8963"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_F23A4CA142809333ABC60D7F9D057B35" FromRole="FromRole_assoc_F23A4CA142809333ABC60D7F9D057B35" ToRole="ToRole_assoc_F23A4CA142809333ABC60D7F9D057B35"/>
+                <NavigationProperty Name="to_distributionChannel" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_6DE2C0889EC4D5C550BC3FEC3848E641" FromRole="FromRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641" ToRole="ToRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641"/>
+                <NavigationProperty Name="to_division" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_FE5BF060A9CAA48B045C2BDD4B78B40C" FromRole="FromRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C" ToRole="ToRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C"/>
+                <NavigationProperty Name="to_items" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_6B30D35E54B2AF0F773D89654E556FFA" FromRole="FromRole_assoc_6B30D35E54B2AF0F773D89654E556FFA" ToRole="ToRole_assoc_6B30D35E54B2AF0F773D89654E556FFA"/>
+                <NavigationProperty Name="to_orderType" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_0A0C6319F9A82960277AAED2201D1F0C" FromRole="FromRole_assoc_0A0C6319F9A82960277AAED2201D1F0C" ToRole="ToRole_assoc_0A0C6319F9A82960277AAED2201D1F0C"/>
+                <NavigationProperty Name="to_salesGroup" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70" FromRole="FromRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70" ToRole="ToRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70"/>
+                <NavigationProperty Name="to_salesOffice" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_78A6C2E7C4BCD7907E37434A5FA23472" FromRole="FromRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472" ToRole="ToRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472"/>
+                <NavigationProperty Name="to_salesOrg" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_55F106FEEE6C94B96D278D65EB145C71" FromRole="FromRole_assoc_55F106FEEE6C94B96D278D65EB145C71" ToRole="ToRole_assoc_55F106FEEE6C94B96D278D65EB145C71"/>
+                <NavigationProperty Name="to_shipTo" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_72DC949052F9D61FCF6C079BF2708D3D" FromRole="FromRole_assoc_72DC949052F9D61FCF6C079BF2708D3D" ToRole="ToRole_assoc_72DC949052F9D61FCF6C079BF2708D3D"/>
+                <NavigationProperty Name="to_soldTo" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_8F777660E75A57EC9BB50C250CDAE90B" FromRole="FromRole_assoc_8F777660E75A57EC9BB50C250CDAE90B" ToRole="ToRole_assoc_8F777660E75A57EC9BB50C250CDAE90B"/>
+            </EntityType>
+            <EntityType Name="ZEFRA_C_SOITEMType" sap:label="Posicion SO" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="orderNumber"/>
+                    <PropertyRef Name="orderItem"/>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="orderNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales document" sap:quickinfo="Sales Document" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="orderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Sales Document Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:text="to_material/Material_Text" sap:label="Material" sap:quickinfo="Material Number" sap:value-list="standard"/>
+                <Property Name="itemDescription" Type="Edm.String" MaxLength="40" sap:label="Item Description" sap:quickinfo="Short text for sales order item"/>
+                <Property Name="orderQuantity" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="salesUnit" sap:label="Order Quantity" sap:quickinfo="Cumulative order quantity in sales units"/>
+                <Property Name="salesUnit" Type="Edm.String" MaxLength="3" sap:text="to_unitOfMeasure/UnitOfMeasure_Text" sap:label="Sales unit" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="netValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="currency" sap:label="Net Value" sap:quickinfo="Net Value of the Order Item in Document Currency" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="currency" Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:quickinfo="SD document currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="createBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of Person who Created the Object" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the record was created" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="createAt" Type="Edm.Time" Precision="0" sap:label="Time" sap:quickinfo="Entry time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="changeOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Date of Last Change" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ParentDraftUUID" Type="Edm.Guid" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="to_header" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_6B30D35E54B2AF0F773D89654E556FFA" FromRole="ToRole_assoc_6B30D35E54B2AF0F773D89654E556FFA" ToRole="FromRole_assoc_6B30D35E54B2AF0F773D89654E556FFA"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA" FromRole="FromRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA" ToRole="ToRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_113360E83B16B90435818F532C40D78D" FromRole="FromRole_assoc_113360E83B16B90435818F532C40D78D" ToRole="ToRole_assoc_113360E83B16B90435818F532C40D78D"/>
+                <NavigationProperty Name="to_material" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_1B3146A0C3BF98CA2B8F67CF173F615B" FromRole="FromRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B" ToRole="ToRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B"/>
+                <NavigationProperty Name="to_unitOfMeasure" Relationship="ZEFRA_C_SOHEADER_CDS.assoc_8064F9FFB03BCE810FAD97010C4105D4" FromRole="FromRole_assoc_8064F9FFB03BCE810FAD97010C4105D4" ToRole="ToRole_assoc_8064F9FFB03BCE810FAD97010C4105D4"/>
+            </EntityType>
+            <ComplexType Name="ValidationFunctionResult">
+                <Property Name="IsValid" Type="Edm.Boolean" sap:label="Is valid"/>
+            </ComplexType>
+            <Association Name="assoc_744267C89213C6F0BEAA53E2EB9C8F4F" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" Multiplicity="1" Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureDimensionType" Multiplicity="0..1" Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F">
+                        <PropertyRef Name="UnitOfMeasureDimension"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F">
+                        <PropertyRef Name="UnitOfMeasureDimension"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_5E18390584266C106B459BC3FD3D3C50" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" Multiplicity="1" Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureISOCodeType" Multiplicity="0..1" Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50">
+                        <PropertyRef Name="UnitOfMeasureISOCode"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50">
+                        <PropertyRef Name="UnitOfMeasureISOCode"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_C9CD836CFC89E1433FB2649E56D3AA66" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_CustomerType" Multiplicity="1" Role="FromRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_CustomerClassificationType" Multiplicity="0..1" Role="ToRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66">
+                        <PropertyRef Name="CustomerClassification"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66">
+                        <PropertyRef Name="CustomerClassification"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_EBF97F0698BDC76F1E3AF501F0F18E9A" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_MaterialType" Multiplicity="1" Role="FromRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" Multiplicity="0..1" Role="ToRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A">
+                        <PropertyRef Name="UnitOfMeasure"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A">
+                        <PropertyRef Name="MaterialBaseUnit"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_B46BCF309A9B43CB25FCEFE1CC5B4227" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_MaterialType" Multiplicity="1" Role="FromRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" Multiplicity="0..1" Role="ToRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227">
+                        <PropertyRef Name="UnitOfMeasure"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227">
+                        <PropertyRef Name="MaterialWeightUnit"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_7CFA283366069453F4999D23E44C8963" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_7CFA283366069453F4999D23E44C8963"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_7CFA283366069453F4999D23E44C8963"/>
+            </Association>
+            <Association Name="assoc_F23A4CA142809333ABC60D7F9D057B35" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_F23A4CA142809333ABC60D7F9D057B35"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="0..1" Role="ToRole_assoc_F23A4CA142809333ABC60D7F9D057B35"/>
+            </Association>
+            <Association Name="assoc_6DE2C0889EC4D5C550BC3FEC3848E641" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_DistributionChannelType" Multiplicity="0..1" Role="ToRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641">
+                        <PropertyRef Name="DistributionChannel"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641">
+                        <PropertyRef Name="distributionChannel"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_FE5BF060A9CAA48B045C2BDD4B78B40C" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_DivisionType" Multiplicity="0..1" Role="ToRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C">
+                        <PropertyRef Name="Division"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C">
+                        <PropertyRef Name="division"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_6B30D35E54B2AF0F773D89654E556FFA" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_6B30D35E54B2AF0F773D89654E556FFA">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="*" Role="ToRole_assoc_6B30D35E54B2AF0F773D89654E556FFA"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_6B30D35E54B2AF0F773D89654E556FFA">
+                        <PropertyRef Name="orderNumber"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_6B30D35E54B2AF0F773D89654E556FFA">
+                        <PropertyRef Name="orderNumber"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_0A0C6319F9A82960277AAED2201D1F0C" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_0A0C6319F9A82960277AAED2201D1F0C"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_SalesOrderTypeType" Multiplicity="0..1" Role="ToRole_assoc_0A0C6319F9A82960277AAED2201D1F0C"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_0A0C6319F9A82960277AAED2201D1F0C">
+                        <PropertyRef Name="SalesOrderType"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_0A0C6319F9A82960277AAED2201D1F0C">
+                        <PropertyRef Name="orderType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_SalesGroupType" Multiplicity="0..1" Role="ToRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70">
+                        <PropertyRef Name="SalesGroup"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70">
+                        <PropertyRef Name="salesGroup"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_78A6C2E7C4BCD7907E37434A5FA23472" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_SalesOfficeType" Multiplicity="0..1" Role="ToRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472">
+                        <PropertyRef Name="SalesOffice"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472">
+                        <PropertyRef Name="salesOffice"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_55F106FEEE6C94B96D278D65EB145C71" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_55F106FEEE6C94B96D278D65EB145C71"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_SalesOrganizationType" Multiplicity="0..1" Role="ToRole_assoc_55F106FEEE6C94B96D278D65EB145C71"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_55F106FEEE6C94B96D278D65EB145C71">
+                        <PropertyRef Name="SalesOrganization"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_55F106FEEE6C94B96D278D65EB145C71">
+                        <PropertyRef Name="salesOrganization"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_72DC949052F9D61FCF6C079BF2708D3D" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_72DC949052F9D61FCF6C079BF2708D3D"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_CustomerType" Multiplicity="0..1" Role="ToRole_assoc_72DC949052F9D61FCF6C079BF2708D3D"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_72DC949052F9D61FCF6C079BF2708D3D">
+                        <PropertyRef Name="Customer"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_72DC949052F9D61FCF6C079BF2708D3D">
+                        <PropertyRef Name="shipTo"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_8F777660E75A57EC9BB50C250CDAE90B" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" Multiplicity="1" Role="FromRole_assoc_8F777660E75A57EC9BB50C250CDAE90B"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_CustomerType" Multiplicity="0..1" Role="ToRole_assoc_8F777660E75A57EC9BB50C250CDAE90B"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_8F777660E75A57EC9BB50C250CDAE90B">
+                        <PropertyRef Name="Customer"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_8F777660E75A57EC9BB50C250CDAE90B">
+                        <PropertyRef Name="soldTo"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="1" Role="FromRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA"/>
+            </Association>
+            <Association Name="assoc_113360E83B16B90435818F532C40D78D" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="1" Role="FromRole_assoc_113360E83B16B90435818F532C40D78D"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="0..1" Role="ToRole_assoc_113360E83B16B90435818F532C40D78D"/>
+            </Association>
+            <Association Name="assoc_1B3146A0C3BF98CA2B8F67CF173F615B" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="1" Role="FromRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_MaterialType" Multiplicity="0..1" Role="ToRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B">
+                        <PropertyRef Name="Material"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B">
+                        <PropertyRef Name="material"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_8064F9FFB03BCE810FAD97010C4105D4" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" Multiplicity="1" Role="FromRole_assoc_8064F9FFB03BCE810FAD97010C4105D4"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" Multiplicity="0..1" Role="ToRole_assoc_8064F9FFB03BCE810FAD97010C4105D4"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_8064F9FFB03BCE810FAD97010C4105D4">
+                        <PropertyRef Name="UnitOfMeasure"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_8064F9FFB03BCE810FAD97010C4105D4">
+                        <PropertyRef Name="salesUnit"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_DB904894788DBE9AF78F0C4A87E3F20A" sap:content-version="1">
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_SalesOrganizationType" Multiplicity="1" Role="FromRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A"/>
+                <End Type="ZEFRA_C_SOHEADER_CDS.I_AddressType" Multiplicity="0..1" Role="ToRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A">
+                        <PropertyRef Name="AddressID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A">
+                        <PropertyRef Name="AddressID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZEFRA_C_SOHEADER_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_Address" EntityType="ZEFRA_C_SOHEADER_CDS.I_AddressType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="I_CompanyCodeStdVH" EntityType="ZEFRA_C_SOHEADER_CDS.I_CompanyCodeStdVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Customer" EntityType="ZEFRA_C_SOHEADER_CDS.I_CustomerType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_CustomerClassification" EntityType="ZEFRA_C_SOHEADER_CDS.I_CustomerClassificationType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_Customer_VH" EntityType="ZEFRA_C_SOHEADER_CDS.I_Customer_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_DistributionChannel" EntityType="ZEFRA_C_SOHEADER_CDS.I_DistributionChannelType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Division" EntityType="ZEFRA_C_SOHEADER_CDS.I_DivisionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="ZEFRA_C_SOHEADER_CDS.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="I_Material" EntityType="ZEFRA_C_SOHEADER_CDS.I_MaterialType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_SalesGroup" EntityType="ZEFRA_C_SOHEADER_CDS.I_SalesGroupType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_SalesOffice" EntityType="ZEFRA_C_SOHEADER_CDS.I_SalesOfficeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_SalesOrderType" EntityType="ZEFRA_C_SOHEADER_CDS.I_SalesOrderTypeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_SalesOrganization" EntityType="ZEFRA_C_SOHEADER_CDS.I_SalesOrganizationType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasure" EntityType="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasureDimension" EntityType="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureDimensionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_UnitOfMeasureISOCode" EntityType="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureISOCodeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEFRA_C_SOHEADER" EntityType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" sap:content-version="1"/>
+                <EntitySet Name="ZEFRA_C_SOITEM" EntityType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" sap:content-version="1"/>
+                <AssociationSet Name="assoc_1B3146A0C3BF98CA2B8F67CF173F615B" Association="ZEFRA_C_SOHEADER_CDS.assoc_1B3146A0C3BF98CA2B8F67CF173F615B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="FromRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B"/>
+                    <End EntitySet="I_Material" Role="ToRole_assoc_1B3146A0C3BF98CA2B8F67CF173F615B"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_5E18390584266C106B459BC3FD3D3C50" Association="ZEFRA_C_SOHEADER_CDS.assoc_5E18390584266C106B459BC3FD3D3C50" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_UnitOfMeasure" Role="FromRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                    <End EntitySet="I_UnitOfMeasureISOCode" Role="ToRole_assoc_5E18390584266C106B459BC3FD3D3C50"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_7CFA283366069453F4999D23E44C8963" Association="ZEFRA_C_SOHEADER_CDS.assoc_7CFA283366069453F4999D23E44C8963" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_7CFA283366069453F4999D23E44C8963"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_7CFA283366069453F4999D23E44C8963"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C9CD836CFC89E1433FB2649E56D3AA66" Association="ZEFRA_C_SOHEADER_CDS.assoc_C9CD836CFC89E1433FB2649E56D3AA66" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_Customer" Role="FromRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66"/>
+                    <End EntitySet="I_CustomerClassification" Role="ToRole_assoc_C9CD836CFC89E1433FB2649E56D3AA66"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_B46BCF309A9B43CB25FCEFE1CC5B4227" Association="ZEFRA_C_SOHEADER_CDS.assoc_B46BCF309A9B43CB25FCEFE1CC5B4227" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_Material" Role="FromRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227"/>
+                    <End EntitySet="I_UnitOfMeasure" Role="ToRole_assoc_B46BCF309A9B43CB25FCEFE1CC5B4227"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_FE5BF060A9CAA48B045C2BDD4B78B40C" Association="ZEFRA_C_SOHEADER_CDS.assoc_FE5BF060A9CAA48B045C2BDD4B78B40C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C"/>
+                    <End EntitySet="I_Division" Role="ToRole_assoc_FE5BF060A9CAA48B045C2BDD4B78B40C"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_F23A4CA142809333ABC60D7F9D057B35" Association="ZEFRA_C_SOHEADER_CDS.assoc_F23A4CA142809333ABC60D7F9D057B35" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_F23A4CA142809333ABC60D7F9D057B35"/>
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="ToRole_assoc_F23A4CA142809333ABC60D7F9D057B35"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_6B30D35E54B2AF0F773D89654E556FFA" Association="ZEFRA_C_SOHEADER_CDS.assoc_6B30D35E54B2AF0F773D89654E556FFA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_6B30D35E54B2AF0F773D89654E556FFA"/>
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="ToRole_assoc_6B30D35E54B2AF0F773D89654E556FFA"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_78A6C2E7C4BCD7907E37434A5FA23472" Association="ZEFRA_C_SOHEADER_CDS.assoc_78A6C2E7C4BCD7907E37434A5FA23472" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472"/>
+                    <End EntitySet="I_SalesOffice" Role="ToRole_assoc_78A6C2E7C4BCD7907E37434A5FA23472"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8064F9FFB03BCE810FAD97010C4105D4" Association="ZEFRA_C_SOHEADER_CDS.assoc_8064F9FFB03BCE810FAD97010C4105D4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="FromRole_assoc_8064F9FFB03BCE810FAD97010C4105D4"/>
+                    <End EntitySet="I_UnitOfMeasure" Role="ToRole_assoc_8064F9FFB03BCE810FAD97010C4105D4"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA" Association="ZEFRA_C_SOHEADER_CDS.assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="FromRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_BE5D56A9C446E40C0D5CA66DCA11A4AA"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_55F106FEEE6C94B96D278D65EB145C71" Association="ZEFRA_C_SOHEADER_CDS.assoc_55F106FEEE6C94B96D278D65EB145C71" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_55F106FEEE6C94B96D278D65EB145C71"/>
+                    <End EntitySet="I_SalesOrganization" Role="ToRole_assoc_55F106FEEE6C94B96D278D65EB145C71"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_0A0C6319F9A82960277AAED2201D1F0C" Association="ZEFRA_C_SOHEADER_CDS.assoc_0A0C6319F9A82960277AAED2201D1F0C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_0A0C6319F9A82960277AAED2201D1F0C"/>
+                    <End EntitySet="I_SalesOrderType" Role="ToRole_assoc_0A0C6319F9A82960277AAED2201D1F0C"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_6DE2C0889EC4D5C550BC3FEC3848E641" Association="ZEFRA_C_SOHEADER_CDS.assoc_6DE2C0889EC4D5C550BC3FEC3848E641" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641"/>
+                    <End EntitySet="I_DistributionChannel" Role="ToRole_assoc_6DE2C0889EC4D5C550BC3FEC3848E641"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_113360E83B16B90435818F532C40D78D" Association="ZEFRA_C_SOHEADER_CDS.assoc_113360E83B16B90435818F532C40D78D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="FromRole_assoc_113360E83B16B90435818F532C40D78D"/>
+                    <End EntitySet="ZEFRA_C_SOITEM" Role="ToRole_assoc_113360E83B16B90435818F532C40D78D"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_744267C89213C6F0BEAA53E2EB9C8F4F" Association="ZEFRA_C_SOHEADER_CDS.assoc_744267C89213C6F0BEAA53E2EB9C8F4F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_UnitOfMeasure" Role="FromRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                    <End EntitySet="I_UnitOfMeasureDimension" Role="ToRole_assoc_744267C89213C6F0BEAA53E2EB9C8F4F"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70" Association="ZEFRA_C_SOHEADER_CDS.assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70"/>
+                    <End EntitySet="I_SalesGroup" Role="ToRole_assoc_FD83BF06E4A6AC2AC9CEFF9C4050CC70"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_EBF97F0698BDC76F1E3AF501F0F18E9A" Association="ZEFRA_C_SOHEADER_CDS.assoc_EBF97F0698BDC76F1E3AF501F0F18E9A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_Material" Role="FromRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A"/>
+                    <End EntitySet="I_UnitOfMeasure" Role="ToRole_assoc_EBF97F0698BDC76F1E3AF501F0F18E9A"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_72DC949052F9D61FCF6C079BF2708D3D" Association="ZEFRA_C_SOHEADER_CDS.assoc_72DC949052F9D61FCF6C079BF2708D3D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_72DC949052F9D61FCF6C079BF2708D3D"/>
+                    <End EntitySet="I_Customer" Role="ToRole_assoc_72DC949052F9D61FCF6C079BF2708D3D"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_DB904894788DBE9AF78F0C4A87E3F20A" Association="ZEFRA_C_SOHEADER_CDS.assoc_DB904894788DBE9AF78F0C4A87E3F20A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_SalesOrganization" Role="FromRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A"/>
+                    <End EntitySet="I_Address" Role="ToRole_assoc_DB904894788DBE9AF78F0C4A87E3F20A"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8F777660E75A57EC9BB50C250CDAE90B" Association="ZEFRA_C_SOHEADER_CDS.assoc_8F777660E75A57EC9BB50C250CDAE90B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEFRA_C_SOHEADER" Role="FromRole_assoc_8F777660E75A57EC9BB50C250CDAE90B"/>
+                    <End EntitySet="I_Customer" Role="ToRole_assoc_8F777660E75A57EC9BB50C250CDAE90B"/>
+                </AssociationSet>
+                <FunctionImport Name="ZEFRA_C_SOHEADERActivation" ReturnType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" EntitySet="ZEFRA_C_SOHEADER" m:HttpMethod="POST" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" sap:applicable-path="Activation_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ZEFRA_C_SOHEADEREdit" ReturnType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" EntitySet="ZEFRA_C_SOHEADER" m:HttpMethod="POST" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" sap:applicable-path="Edit_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZEFRA_C_SOHEADERPreparation" ReturnType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" EntitySet="ZEFRA_C_SOHEADER" m:HttpMethod="POST" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" sap:applicable-path="Preparation_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZEFRA_C_SOHEADERValidation" ReturnType="ZEFRA_C_SOHEADER_CDS.ValidationFunctionResult" m:HttpMethod="GET" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" sap:applicable-path="Validation_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZEFRA_C_SOITEMPreparation" ReturnType="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" EntitySet="ZEFRA_C_SOITEM" m:HttpMethod="POST" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" sap:applicable-path="Preparation_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="orderItem" Type="Edm.String" Mode="In" MaxLength="6"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZEFRA_C_SOITEMValidation" ReturnType="ZEFRA_C_SOHEADER_CDS.ValidationFunctionResult" m:HttpMethod="GET" sap:action-for="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" sap:applicable-path="Validation_ac">
+                    <Parameter Name="orderNumber" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="orderItem" Type="Edm.String" Mode="In" MaxLength="6"/>
+                    <Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="ActivationAction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADERActivation"/>
+                        <PropertyValue Property="EditAction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADEREdit"/>
+                        <PropertyValue Property="PreparationAction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADERPreparation"/>
+                        <PropertyValue Property="ValidationFunction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADERValidation"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Activation_ac</PropertyPath>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Activation_ac</PropertyPath>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOITEM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftNode">
+                    <Record>
+                        <PropertyValue Property="PreparationAction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOITEMPreparation"/>
+                        <PropertyValue Property="ValidationFunction" String="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOITEMValidation"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.DraftActivationVia">
+                    <Collection>
+                        <String>ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities/ZEFRA_C_SOHEADER</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_CustomerType/CustomerClassification" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer Classification"/>
+                        <PropertyValue Property="CollectionPath" String="I_CustomerClassification"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CustomerClassification"/>
+                                    <PropertyValue Property="ValueListProperty" String="CustomerClassification"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerClassification_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_MaterialType/MaterialBaseUnit" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasure"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MaterialBaseUnit"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_MaterialType/MaterialWeightUnit" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasure"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MaterialWeightUnit"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_SalesOrganizationType/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Company Code"/>
+                        <PropertyValue Property="CollectionPath" String="I_CompanyCodeStdVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CompanyCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCodeName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_SalesOrganizationType/IntercompanyBillingCustomer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="IntercompanyBillingCustomer"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType/UnitOfMeasureISOCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure ISO Code"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasureISOCode"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnitOfMeasureISOCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureISOCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureISOCode_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType/UnitOfMeasureDimension" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure Dimension"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasureDimension"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnitOfMeasureDimension"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureDimension"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasureDimension_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/orderType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Order Types"/>
+                        <PropertyValue Property="CollectionPath" String="I_SalesOrderType"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="orderType"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrderType"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrderType_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/salesOrganization" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Organization"/>
+                        <PropertyValue Property="CollectionPath" String="I_SalesOrganization"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="salesOrganization"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganization"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOrganization_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/distributionChannel" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Distribution Channel"/>
+                        <PropertyValue Property="CollectionPath" String="I_DistributionChannel"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="distributionChannel"/>
+                                    <PropertyValue Property="ValueListProperty" String="DistributionChannel"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DistributionChannel_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/division" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Division"/>
+                        <PropertyValue Property="CollectionPath" String="I_Division"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="division"/>
+                                    <PropertyValue Property="ValueListProperty" String="Division"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Division_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/salesOffice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Office"/>
+                        <PropertyValue Property="CollectionPath" String="I_SalesOffice"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="salesOffice"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesOffice"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesOffice_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/salesGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales Group"/>
+                        <PropertyValue Property="CollectionPath" String="I_SalesGroup"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="salesGroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesGroup"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SalesGroup_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/soldTo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="soldTo"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/shipTo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="shipTo"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType/material" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="CollectionPath" String="I_Material"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="material"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Material_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType/salesUnit" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Unit of Measure"/>
+                        <PropertyValue Property="CollectionPath" String="I_UnitOfMeasure"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="salesUnit"/>
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="UnitOfMeasure_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADER_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/shipToName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType/soldToName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType/itemDescription" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType/orderQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOHEADERType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>orderNumber</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.ZEFRA_C_SOITEMType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>orderItem</PropertyPath>
+                        <PropertyPath>orderNumber</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEFRA_C_SOHEADER_CDS.I_UnitOfMeasureType/UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.UnitSpecificScale" Path="UnitOfMeasureDspNmbrOfDcmls"/>
+            </Annotations>
+            <atom:link rel="self" href="http://www.laloperu.com:8010/sap/opu/odata/sap/ZEFRA_C_SOHEADER_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://www.laloperu.com:8010/sap/opu/odata/sap/ZEFRA_C_SOHEADER_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
