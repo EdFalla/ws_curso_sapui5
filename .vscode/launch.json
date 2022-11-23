@@ -1,5 +1,4 @@
 {
-    "version": "0.2.0",
     "configurations": [
         {
             "name": "Start zerfa",
@@ -160,6 +159,88 @@
             "env": {
                 "FIORI_TOOLS_URL_PARAMS": "sap-client=300&sap-ui-xx-viewCache=false"
             }
+        },
+        {
+            "name": "Start messages",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/messages",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html#messages-tile"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "FIORI_TOOLS_URL_PARAMS": "sap-client=300&sap-ui-xx-viewCache=false"
+            }
+        },
+        {
+            "name": "Start messages Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/messages",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-mock.yaml",
+                "--open",
+                "test/flpSandbox.html#messages-tile"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "FIORI_TOOLS_URL_PARAMS": "sap-client=300&sap-ui-xx-viewCache=false"
+            }
+        },
+        {
+            "name": "Start messages Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/messages",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html#messages-tile"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "FIORI_TOOLS_URL_PARAMS": "sap-client=300&sap-ui-xx-viewCache=false"
+            }
         }
-    ]
+    ],
+    "compounds": [],
+    "version": "0.2.0"
 }
