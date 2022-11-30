@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.sapcsr.laloProject.controller.Page1" xmlns="sap.m" xmlns:chart="sap.chart" xmlns:data="sap.chart.data" xmlns:layout="sap.ui.commons.layout">
+    <Page showHeader="true" title="Lalo Peru" showFooter="false" showNavButton="false" enableScrolling="false">
+        <content>
+            <layout:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout:positions>
+                    <layout:PositionContainer left="54px" top="29px">
+                        <layout:control>
+                            <Title text="Reporte de Ventas" titleStyle="H1" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                    <layout:PositionContainer left="82px" top="60px">
+                        <layout:control>
+                            <Title text="Ventas Total 2011" titleStyle="H3" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                    <layout:PositionContainer left="0px" top="122px">
+                        <layout:control>
+                            <chart:Chart id="sap_m_Page_0-content-sap_chart_DonutChart-1669849908278" width="100%" height="235.00000000px" visibleDimensions="__metadata/uri" visibleMeasures="INGRESOS" vizProperties="{staticDataModel>/sap_m_Page_0-content-sap_chart_DonutChart-1669849908278/vizProperties}" chartType="donut" selectionMode="Single" uiConfig="{}">
+                                <chart:dimensions>
+                                    <data:Dimension name="__metadata/uri" label="Trimestre" role="category" textProperty="TRIMESTRE"/>
+                                </chart:dimensions>
+                                <chart:measures>
+                                    <data:Measure name="INGRESOS" label="Ingresos" role="axis1"/>
+                                </chart:measures>
+                            </chart:Chart>
+                        </layout:control>
+                    </layout:PositionContainer>
+                </layout:positions>
+            </layout:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

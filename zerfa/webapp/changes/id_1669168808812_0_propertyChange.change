@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1669168808812_0_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "zerfa",
+    "packageName": "",
+    "content": {
+        "property": "fitContent",
+        "newValue": true
+    },
+    "selector": {
+        "id": "zerfa::sap.suite.ui.generic.template.ListReport.view.ListReport::ZEFRA_C_SOHEADER--page",
+        "idIsLocal": false,
+        "type": "sap.f.DynamicPage"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/zerfa/changes/",
+    "projectId": "",
+    "creation": 1669168808812,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.102.1",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
